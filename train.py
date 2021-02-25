@@ -61,7 +61,7 @@ def main():
 
     model = clf.fit(x_train, y_train)
     metric = model.score(x_test, y_test)
-    run.log("metric", np.float(metric))
+    run.log("normalized_root_mean_squared_error", np.float(metric))
     os.makedirs('./outputs', exist_ok=True)
     joblib.dump(value=model, filename='./outputs/hd-model.joblib')
 
